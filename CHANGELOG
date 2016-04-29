@@ -1,5 +1,6 @@
 = ActiveMerchant CHANGELOG
 
+* Stripe: Added support for the contactless magstripe entry mode option [rbalsdon]
 * CardStream: Add AED and NZD currencies [sdball]
 
 
