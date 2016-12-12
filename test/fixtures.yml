@@ -21,6 +21,11 @@ authorize_net:
   login: 7Tt72zseSzH
   password: 7gTh55rdy92ZkP4z
 
+# Working credentials, no need to replace
+awesome_sauce:
+  login: spreedly@robertevans.org-api
+  password: fd6f66c679cd370d1e38002941948ea712c34b31717cba5160e05f2e0d91682601395ad6810d8605
+
 axcessms:
   channel: channel
   sender: sender
