@@ -54,7 +54,7 @@ module ActiveMerchant #:nodoc:
       MINIMUM_AUTHORIZE_AMOUNTS = {
         "USD" => 100,
         "CAD" => 100,
-        "GBP" => 60,
+        "GBP" => 100,
         "EUR" => 100,
         "DKK" => 500,
         "NOK" => 600,

@@ -201,7 +201,7 @@ class RemoteStripeTest < Test::Unit::TestCase
   def test_successful_verify_gbp
     assert response = @gateway.verify(@credit_card, @options.merge(currency: "gbp"))
     assert_success response
-    assert_equal 60, response.params["amount"]
+    assert_equal 100, response.params["amount"]
     assert_equal "gbp", response.params["currency"]
   end
 
