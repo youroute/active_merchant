@@ -48,11 +48,17 @@ module ActiveMerchant #:nodoc:
       end
 
       def purchase(money, credit_card, options={})
-        token = @token || create_token(true, credit_card.first_name+' '+credit_card.last_name, credit_card.month, credit_card.year, credit_card.number, credit_card.verification_value)
-        if response.success?
+        if @token
           post = create_post_for_auth_or_purchase(token, money, options)
           response = commit(:post, 'orders', post, options, 'purchase')
+        else
+          response = create_token(true, credit_card.first_name+' '+credit_card.last_name, credit_card.month, credit_card.year, credit_card.number, credit_card.verification_value)
+          if response.success?
+            post = create_post_for_auth_or_purchase(response.authorization, money, options)
+            response = commit(:post, 'orders', post, options, 'purchase')
+          end
         end
+
         response
       end
 
